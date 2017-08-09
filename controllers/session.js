@@ -1,15 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user');
+const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
 router.get('/login', (req, res)=>{
-
   res.render('users/login.ejs', {})
 })
 
 router.get('/register', (req, res) => {
-
   res.render('users/register.ejs', {})
 })
 
