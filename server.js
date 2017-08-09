@@ -10,26 +10,23 @@ const db = mongoose.connection;
 const port = process.env.port || 3000;
 
 //Database
-const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
-
-//Errors
-db.on('error', console.error.bind(console, 'connection error: '));
-db.once('open', function () {
-  console.log( 'DB: Connected' );
-});
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/craftli';
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
 //Routes
-app.get( '/' , ( req, res ) => {
+app.get('/', (req, res) => {
   res.render('index.ejs');
 });
 
 
 //Connection & Listener
 mongoose.connect(mongoUri);
+mongoose.connection.once('open', ()=>{
+  console.log('mongoose connection successful');
+})
 app.listen(port, () =>{
   console.log('listening on port' + port);
 });
