@@ -19,11 +19,11 @@ db.once('open', function () {
 });
 
 //Middleware
-app.use(session({
-  secret: "random",
-  resave: false,
-  saveUninitialized: false
-}));
+// app.use(session({
+//   secret: "random",
+//   resave: false,
+//   saveUninitialized: false
+// }));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
