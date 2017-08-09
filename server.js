@@ -18,12 +18,6 @@ db.once('open', function () {
   console.log( 'DB: Connected' );
 });
 
-//Middleware
-// app.use(session({
-//   secret: "random",
-//   resave: false,
-//   saveUninitialized: false
-// }));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
