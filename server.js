@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const db = mongoose.connection;
 
 //Port
 const port = process.env.port || 3000;
