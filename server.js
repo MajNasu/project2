@@ -4,10 +4,12 @@ const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const ejs = require('ejs');
 
-app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
+app.use(bodyParser.urlencoded({extended: false}));
+
 
 //Routes
 app.get('/', (req, res) => {
