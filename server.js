@@ -18,15 +18,13 @@ db.once('open', function () {
   console.log( 'DB: Connected' );
 });
 
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
-app.use(bodyParser.urlencoded({extended: false}));
-
-
 
 //Routes
 app.get( '/' , ( req, res ) => {
-  res.send('hi');
+  res.render('index.ejs');
 });
 
 
