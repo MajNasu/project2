@@ -9,8 +9,17 @@
 
     <ul>
       <%for(let i=0; i<profiles.length; i++){%>
-        <li><a href='/profiles/<%=profiles[i]%>'> <%=profiles[i].firstName + profiles[i].lastName + profiles[i].about%>
+        <li><a href='/profiles/<%=profiles[i]%>'>
+          <div>
+            <%=profiles[i].firstName%>
+            <%=profiles[i].lastName%>
+            <br/>
+            <%=profiles[i].about%>
+          </div>
         </a></li>
       <%}%>
+    </ul>
+
+
   </body>
 </html>
