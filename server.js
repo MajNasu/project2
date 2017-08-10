@@ -7,13 +7,14 @@ const mongoose = require('mongoose');
 const ejs = require('ejs');
 const profilesController = require('./controllers/profiles.js');
 const sessionController = require('./controllers/session.js');
+const userController = require('./controllers/users.js');
 
+app.use('/users', userController);
 app.use('/profiles', profilesController);
-app.use('/users', sessionController);
+app.use('/sessions', sessionController);
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
-
 
 //Routes
 app.get('/', (req, res) => {

@@ -6,12 +6,18 @@
   </head>
   <body>
     <h1>look at all of these profiles</h1>
-    <ul>
+
       <%for(let i=0; i<profiles.length; i++){%>
-        <li><a href="/profiles/<%=profiles[i]._id%>">
-          <%=profiles[i].firstName%>
-        </a></li>
+        <a href="/profiles/<%=profiles[i]._id%>">
+          <h5><%=profiles[i].firstName%></a>
+        <a href="/profiles/<%=profiles[i]._id%>">
+          <%=profiles[i].lastName%></a>
+          </h5>
+            <br/>
+          <h6><%=profiles[i].about</h6>
       <%}%>
-    </ul>
+
+      <a href="/profiles/new.ejs">create a new profile</a>
+
   </body>
 </html>
