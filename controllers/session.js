@@ -1,28 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const Users = require('../models/users.js');
-const Profiles = require('../models/profiles.js');
 const bcrypt = require('bcrypt');
 
-//All users page
-router.get('/', (req, res)=>{
-  Users.find({}, (err, foundUsers)=>{
-    res.render('users/index.ejs', {
-      users: foundUsers
-    });
-  });
+//Login route
+router.get('/login', (req, res)=>{
+  res.render('users/login.ejs', {});
 });
 
-//Login
-router.get('/login', (req, res)=>{
-  res.render('users/login.ejs', {
-
-  })
-})
-
+//Register route
 router.get('/register', (req, res) => {
   res.render('users/register.ejs', {})
-})
+});
 
 //Try to create a post route at the address /login that will accept data from the login form
 router.post('/login', (req, res) => {
@@ -35,11 +24,11 @@ router.post('/login', (req, res) => {
         res.redirect('/users');
       } else {
         req.session.message = "Username or password are incorrect";
-        res.redirect('/users/login');
+        res.redirect('/sessions/login');
       }
     } else {
       req.session.message = "Username' or password are incorrect";
-      res.redirect('/users/login');
+      res.redirect('/sessions/login');
     }
   });
   // //set a property on the session named username and equate it to username sent from the form

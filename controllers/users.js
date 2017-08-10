@@ -12,7 +12,6 @@ router.get('/', (req, res)=>{
   });
 });
 
-//
 // //Create a new thing
 // router.get('/new', (req, res)=>{
 //   res.render('profiles/new.ejs');
@@ -35,7 +34,7 @@ router.get('/', (req, res)=>{
 //
 // router.delete('/:id', (req, res)=>{
 //   Profiles.findByIdAndRemove(req.params.id, ()=>{
-//     res.redirect('/feelings');
+//     res.redirect('/profiles');
 //   });
 // });
 
