@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/users.js');
+const Users = require('../models/users.js');
 const Profiles = require('../models/profiles.js');
 const bcrypt = require('bcrypt');
 
 //All users page
 router.get('/', (req, res)=>{
-  User.find({}, (err, foundUsers)=>{
+  Users.find({}, (err, foundUsers)=>{
     res.render('users/index.ejs', {
       users: foundUsers
     });
@@ -26,7 +26,7 @@ router.get('/register', (req, res) => {
 
 //Try to create a post route at the address /login that will accept data from the login form
 router.post('/login', (req, res) => {
-  User.findOne({username: req.body.username}, (err, user)=>{
+  Users.findOne({username: req.body.username}, (err, user)=>{
     if(user){
       //now compare hash with the password from the from
       if(bcrypt.compareSync(req.body.password, user.password)){
@@ -59,7 +59,7 @@ router.post('/registration', (req, res)=>{
   const userDB = {};
   userDB.username = req.body.username;
   userDB.password = passwordHash;
-  User.create(userDB, (err, user)=>{
+  Users.create(userDB, (err, user)=>{
     console.log(user);
 
     //set up session
