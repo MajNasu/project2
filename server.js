@@ -6,8 +6,10 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const ejs = require('ejs');
 const profilesController = require('./controllers/profiles.js');
+const sessionController = require('./controllers/session.js');
 
 app.use('/profiles', profilesController);
+app.use('/users', sessionControllere);
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));

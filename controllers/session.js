@@ -1,10 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/users.js');
+const Profiles = require('../models/profiles.js');
 const bcrypt = require('bcrypt');
 
+//All users page
+router.get('/', (req, res)=>{
+  User.find({}, (err, foundUsers)=>{
+    res.render('users/index.ejs', {
+      users: foundUsers
+    });
+  });
+});
+
+//Login
 router.get('/login', (req, res)=>{
-  res.render('users/login.ejs', {})
+  res.render('users/login.ejs', {
+
+  })
 })
 
 router.get('/register', (req, res) => {
@@ -19,7 +32,7 @@ router.post('/login', (req, res) => {
       if(bcrypt.compareSync(req.body.password, user.password)){
         req.session.username = req.body.username;
         req.session.logged = true;
-        res.redirect('/authors');
+        res.redirect('/users');
       } else {
         req.session.message = "Username or password are incorrect";
         res.redirect('/sessions/login');
