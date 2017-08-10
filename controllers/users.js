@@ -5,7 +5,7 @@ const Users = require('../models/users.js');
 
 //Index Page: Show all users.
 router.get('/', (req, res)=>{
-  User.find({}, (err, foundUsers)=>{
+  Users.find({}, (err, foundUsers)=>{
     res.render('users/index.ejs', {
       users: foundUsers
     });
