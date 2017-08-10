@@ -6,7 +6,7 @@ const Users = require('../models/users.js');
 
 //Profile Index, display all the mock profiles
 router.get('/', (req, res)=>{
-  User.find({}, (err, foundUsers)=>{
+  Users.find({}, (err, foundUsers)=>{
     Profiles.find({}, (err, foundProfiles)=>{
       res.render('profiles/index.ejs', {
         profiles: foundProfiles,
