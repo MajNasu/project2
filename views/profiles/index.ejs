@@ -6,17 +6,11 @@
   </head>
   <body>
     <h1>look at all of these profiles</h1>
-
+    <ul>
       <%for(let i=0; i<profiles.length; i++){%>
-        <table>
-          <tr>
-            <td><%=profiles[i].firstName%></td>
-            <td><%=profiles[i].lastName%></td>
-            <td><%=profiles[i].about%></td>
-          </tr>
-        </table>
+        <li><a href="/users/<%=users[i]._id%>"><%=users[i].firstName%></a></li>
       <%}%>
-
+    </ul>
 
   </body>
 </html>
