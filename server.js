@@ -9,7 +9,7 @@ const profilesController = require('./controllers/profiles.js');
 const sessionController = require('./controllers/session.js');
 
 app.use('/profiles', profilesController);
-app.use('/users', sessionControllere);
+app.use('/users', sessionController);
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
