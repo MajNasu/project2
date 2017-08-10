@@ -8,7 +8,9 @@
     <h1>look at all of these profiles</h1>
     <ul>
       <%for(let i=0; i<profiles.length; i++){%>
-        <li><a href="/profiles/<%=profiles[i]._id%>"><%=profiles[i].firstName%></a></li>
+        <li><a href="/profiles/<%=profiles[i]._id%>">
+          <%=profiles[i]%>
+        </a></li>
       <%}%>
     </ul>
 
