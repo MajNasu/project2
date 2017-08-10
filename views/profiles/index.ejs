@@ -7,18 +7,15 @@
   <body>
     <h1>look at all of these profiles</h1>
 
-    <ul>
       <%for(let i=0; i<profiles.length; i++){%>
-        <li><a href='/profiles/<%=profiles[i]%>'>
-          <div>
-            <%=profiles[i].firstName%>
-            <%=profiles[i].lastName%>
-            <br/>
-            <%=profiles[i].about%>
-          </div>
-        </a></li>
+        <table>
+          <tr>
+            <td><%=profiles[i].firstName%></td>
+            <td><%=profiles[i].lastName%></td>
+            <td><%=profiles[i].about%></td>
+          </tr>
+        </table>
       <%}%>
-    </ul>
 
 
   </body>
