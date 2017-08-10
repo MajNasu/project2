@@ -35,11 +35,11 @@ router.post('/login', (req, res) => {
         res.redirect('/users');
       } else {
         req.session.message = "Username or password are incorrect";
-        res.redirect('/sessions/login');
+        res.redirect('/users/login');
       }
     } else {
       req.session.message = "Username' or password are incorrect";
-      res.redirect('/sessions/login');
+      res.redirect('/users/login');
     }
   });
   // //set a property on the session named username and equate it to username sent from the form
@@ -65,7 +65,7 @@ router.post('/registration', (req, res)=>{
     //set up session
     req.session.username = user.username;
     req.session.logged = true;
-    res.redirect('/authors');
+    res.redirect('/users');
   });
 });
 
