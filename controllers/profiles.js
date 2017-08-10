@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Profiles = require('../models/profiles.js');
+const Users = require('../models/users.js');
 
 router.get('/', (req, res)=>{
   Profiles.find({}, (err, foundProfiles)=>{
