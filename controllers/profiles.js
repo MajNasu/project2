@@ -10,14 +10,14 @@ router.get('/', (req, res)=>{
   });
 });
 
+router.get('/new', (req, res)=>{
+  res.render('profiles/new.ejs');
+});
+
 router.post('/', (req, res)=>{
   Profiles.create(req.body, (err, createdProfile)=>{
     res.redirect('/profiles');
   });
-});
-
-router.get('/new', (req, res)=>{
-  res.render('profiles/new.ejs');
 });
 
 router.get('/:id', (req, res)=>{
@@ -25,6 +25,12 @@ router.get('/:id', (req, res)=>{
     res.render('profiles/show.ejs',{
       profile: foundProfile
     });
+  });
+});
+
+router.delete('/:id', (req, res)=>{
+  Profiles.findByIdAndRemove(req.params.id, ()=>{
+    res.redirect('/feelings');
   });
 });
 
