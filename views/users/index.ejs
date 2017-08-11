@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>all users</title>
+    <%include ../partials/head.ejs%>
+
   </head>
   <body>
-    <h1>look at all of these users</h1>
+    <% include ../partials/header.ejs %>
+
+    <h1>all users</h1>
 
     <ul>
       <%for(let i=0; i<users.length; i++){%>
@@ -13,8 +15,6 @@
       <%}%>
     </ul>
 
-    <a href="/profiles">go to profiles</a>
-      <br/>
-    <a href="/">home</a>
+    <%include ../partials/footer.ejs%>
   </body>
 </html>

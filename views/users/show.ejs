@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title><%=user.username%></title>
+    <%include ../partials/head.ejs%>
+
   </head>
   <body>
+  <% include ../partials/header.ejs %>
+
     <h2><%=user.username%></h2>
       <br/>
 
+    <% include ../partials/footer.ejs%>
   </body>
 </html>

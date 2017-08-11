@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>craftli | register</title>
+    <%include ../partials/head.ejs%>
+
   </head>
   <body>
+    <% include ../partials/header.ejs %>
+
     <br>
     <br>
     <br>
-    <form action="/sessions/registration" method="POST">
-       username: <input type="text" name="username" value="">
-       passsword: <input type="password" name="password" value="">
-       <input type="submit" value="register">
+
+    <form action="/sessions/registration" method="POST" class="text-center pagination-centered">
+       username: <input type="text" name="username" value="" class="inputstuff"><br/>
+       password: <input type="password" name="password" value="" class="inputstuff">
+       <br/>
+
+       <input type="submit" value="register" class="inputstuff">
     </form>
 
+    <%include ../partials/footer.ejs%>
   </body>
 </html>

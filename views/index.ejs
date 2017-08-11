@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<title></title>
+		<% include ./partials/head.ejs %>
 	</head>
 	<body>
+		<% include ./partials/header.ejs %>
 		<header>
-			<h1>craftli.</h1>
-			<p> make a mock LinkedIn profile <p>
-			<p> comment on other profiles <p>
-			<p> receive feedback on your profile <p>
+			<div class="container">
+				<div class="row row-centered">
+					<div class="col-sm-4 col-centered"> create a mock LinkedIn profile! </div>
+					<div class="col-sm-4 col-centered"> edit other users' profiles without their permission! </div>
+					<div class="col-sm-4 col-centered"> complete administrative control for everybody! </div>
+				</div>
+			</div>
 		</header>
 
-		<a href="/profiles">view available profiles</a>
-			<br/>
-		<a href="/users">view users</a>
-			<br/>
-		<a href="/sessions/login">login</a>
-			<br/>
-		<a href="/sessions/register">register</a>
-
+		<% include ./partials/footer.ejs %>
 	</body>
 </html>

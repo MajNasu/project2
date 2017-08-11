@@ -16,8 +16,6 @@ router.get('/', (req, res)=>{
 
 //Create a new profile
 router.get('/new', (req, res)=>{
-  //if(user is logged on and creates a new profile)
-    //add it to their account
   res.render('profiles/new.ejs');
 });
 

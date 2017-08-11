@@ -1,0 +1,52 @@
+body {
+  background: url('http://www.talonx.com/file/2013/09/polyagonal-web-design.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+html, body{
+  height: 100%;
+  text-align:center;
+}
+
+body {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /*font-family: 'Josefin Sans', sans-serif;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align:center;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+footer {
+  bottom: 0;
+  position: absolute;
+}
+
+.row {
+  text-align: center;
+  border: solid #f5f5dc 2px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.inputstuff{
+  margin: 7px;
+}
+
+.jumbotron{
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 50px;
+}

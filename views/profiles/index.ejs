@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>profiles</title>
+    <% include ../partials/head.ejs %>
   </head>
   <body>
-    <h1>look at all of these profiles</h1>
+    <% include ../partials/header.ejs %>
+
+    <h1>all profiles</h1>
+
 
       <%for(let i=0; i<profiles.length; i++){%>
-        Name: <a href="/profiles/<%=profiles[i]._id%>">
-          <%=profiles[i].firstName%> <%=profiles[i].lastName%></a>
+        <div class="jumbotron">
+        <h1 class="display-6"><a href="/profiles/<%=profiles[i]._id%>">
+          <%=profiles[i].firstName%> <%=profiles[i].lastName%></a></h1>
             <br/>
-          About: <%=profiles[i].about%>
-            <br/>
-            <br/>
+          <p class="lead"> <%=profiles[i].about%></p>
+
+          <hr class="my-4"><p> <%=profiles[i].summary%></p></hr>
+
       <%}%>
 
-      <a href="/profiles/new">create a new profile</a>
-      <br/>
-      <a href="/users">go to users</a>
-      <br/>
-      <a href="/">home</a>
+      <%include ../partials/footer.ejs%>
   </body>
 </html>
