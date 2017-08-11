@@ -12,26 +12,19 @@ router.get('/', (req, res)=>{
   });
 });
 
-// //Create a new thing
-// router.get('/new', (req, res)=>{
-//   res.render('profiles/new.ejs');
-// });
-//
-// //Post route for creation
-// router.post('/', (req, res)=>{
-//   Profiles.create(req.body, (err, createdProfile)=>{
-//     res.redirect('/profiles');
-//   });
-// });
-//
-// router.get('/:id', (req, res)=>{
-//   Profiles.findById(req.params.id, (err, foundProfile)=>{
-//     res.render('profiles/show.ejs',{
-//       profile: foundProfile
-//     });
-//   });
-// });
-//
+//Show a specific user and his/her profile(s)
+router.get('/:id', (req, res)=>{
+  Users.find({}, (err, user)=> {
+    Profiles.findById(req.params.id, (err, foundProfile)=>{
+      res.render('profiles/show.ejs',{
+        profile: foundProfile,
+        user: user
+      });
+    });
+  });
+});
+
+//Delete a user if you are the user
 // router.delete('/:id', (req, res)=>{
 //   Profiles.findByIdAndRemove(req.params.id, ()=>{
 //     res.redirect('/profiles');

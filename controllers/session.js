@@ -3,7 +3,7 @@ const router = express.Router();
 const Users = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
-//Login route
+// Login route
 router.get('/login', (req, res)=>{
   res.render('users/login.ejs', {});
 });
@@ -15,6 +15,7 @@ router.get('/register', (req, res) => {
 
 //Try to create a post route at the address /login that will accept data from the login form
 router.post('/login', (req, res) => {
+  console.log(req.body);
   Users.findOne({username: req.body.username}, (err, user)=>{
     if(user){
       //now compare hash with the password from the from

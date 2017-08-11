@@ -10,10 +10,7 @@ const profilesController = require('./controllers/profiles.js');
 const sessionController = require('./controllers/session.js');
 const userController = require('./controllers/users.js');
 
-//controllers & MW
-app.use('/users', userController);
-app.use('/profiles', profilesController);
-app.use('/sessions', sessionController);
+//MW
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -22,6 +19,11 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+
+//Controllers
+app.use('/users', userController);
+app.use('/profiles', profilesController);
+app.use('/sessions', sessionController);
 
 
 //Routes

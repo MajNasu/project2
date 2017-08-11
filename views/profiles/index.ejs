@@ -8,16 +8,17 @@
     <h1>look at all of these profiles</h1>
 
       <%for(let i=0; i<profiles.length; i++){%>
-        <a href="/profiles/<%=profiles[i]._id%>">
-          <h5><%=profiles[i].firstName%></a>
-        <a href="/profiles/<%=profiles[i]._id%>">
-          <%=profiles[i].lastName%></a>
-          </h5>
+        Name: <a href="/profiles/<%=profiles[i]._id%>">
+          <%=profiles[i].firstName%> <%=profiles[i].lastName%></a>
             <br/>
-          <h6><%=profiles[i].about%></h6>
+          About: <%=profiles[i].about%>
+            <br/>
+            <br/>
       <%}%>
 
-      <a href="/profiles/new.ejs">create a new profile</a>
+      <a href="/profiles/new">create a new profile</a>
+      <br/>
+      <a href="/users">go to users</a>
 
   </body>
 </html>

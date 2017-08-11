@@ -6,12 +6,10 @@ const Users = require('../models/users.js');
 
 //Profile Index, display all the mock profiles
 router.get('/', (req, res)=>{
-  Users.find({}, (err, foundUsers)=>{
-    Profiles.find({}, (err, foundProfiles)=>{
-      res.render('profiles/index.ejs', {
-        profiles: foundProfiles,
-        users: foundUsers
-      });
+  Profiles.find({}, (err, foundProfiles)=>{
+    console.log(foundProfiles);
+    res.render('profiles/index.ejs', {
+      profiles: foundProfiles,
     });
   });
 });
@@ -23,9 +21,9 @@ router.get('/new', (req, res)=>{
 
 //Post route for creation
 router.post('/', (req, res)=>{
-  Profiles.create(req.body, (err, createdProfile)=>{
-    res.redirect('/profiles');
-  });
+    Profiles.create(req.body, (err, createdProfile)=>{
+      res.redirect('/profiles');
+    });
 });
 
 //Show route
