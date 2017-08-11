@@ -12,7 +12,7 @@ const userController = require('./controllers/users.js');
 
 //MW
 app.use(express.static('public'));
-app.use(methodOverride('_method'));
+app.use(methodOverride('method'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({
   secret: "shhhhhhhhhhh",

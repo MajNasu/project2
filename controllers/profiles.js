@@ -16,6 +16,8 @@ router.get('/', (req, res)=>{
 
 //Create a new profile
 router.get('/new', (req, res)=>{
+  //if(user is logged on and creates a new profile)
+    //add it to their account
   res.render('profiles/new.ejs');
 });
 
@@ -35,9 +37,23 @@ router.get('/:id', (req, res)=>{
   });
 });
 
+//Edit route
+router.get('/:id/edit', (req, res)=>{
+  Profiles.findById(req.params.id, (err, foundProfile)=>{
+    res.render('profiles/edit.ejs', {
+      profiles: foundProfile
+    });
+  });
+});
+router.put('/:id', (req, res)=>{
+  Profiles.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedProfile)=>{
+    res.redirect('/profiles');
+  })
+});
+
 //Delete route
 router.delete('/:id', (req, res)=>{
-  Profiles.findByIdAndRemove(req.params.id, ()=>{
+  Profiles.findByIdAndRemove(req.params.id, (err, foundProfile)=>{
     res.redirect('/profiles');
   });
 });

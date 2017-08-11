@@ -32,12 +32,6 @@ router.post('/login', (req, res) => {
       res.redirect('/sessions/login');
     }
   });
-  // //set a property on the session named username and equate it to username sent from the form
-  // req.session.username = req.body.username;
-  // //set a property on the session called logged and set it true
-  // req.session.logged = true;
-  // console.log(req.session);
-  // res.redirect('/authors');
 });
 
 router.post('/registration', (req, res)=>{

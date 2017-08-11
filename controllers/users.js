@@ -14,12 +14,10 @@ router.get('/', (req, res)=>{
 
 //Show a specific user and his/her profile(s)
 router.get('/:id', (req, res)=>{
-  Users.find({}, (err, user)=> {
-    Profiles.findById(req.params.id, (err, foundProfile)=>{
-      res.render('profiles/show.ejs',{
-        profile: foundProfile,
-        user: user
-      });
+  Users.findById(req.params.id, (err, user)=> {
+    console.log(user);
+    res.render('users/show.ejs', {
+      user: user
     });
   });
 });

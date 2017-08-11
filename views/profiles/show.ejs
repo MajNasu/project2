@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>each profile</title>
+  </head>
+  <body>
+    <h2><%=profile.firstName%> <%=profile.lastName%></h2>
+
+    <p><%=profile.about%></p>
+      <br/>
+    <p><%=profile.summary%></p>
+    <br/>
+
+    <a href="<%=profile._id%>/edit">edit</a>
+
+    <form action="/profiles/<%=profile._id%>?method=DELETE" method="post">
+      <input type="submit" value="delete"/>
+    </form>
+  </body>
+</html>

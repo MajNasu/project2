@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>edit individual profile</title>
+  </head>
+  <body>
+    <h1>edit <%=profiles.firstName%> <%=profiles.lastName%></h1>
+
+    <main>
+      <form action="/profiles/<%=profiles._id%>?method=PUT" method="POST">
+        First Name: <input type="text" name="firstName"/><br/>
+        Last Name: <input type="text" name="lastName"/><br/>
+        About: <input type="text" name="about"/><br/>
+        Summary: <input type="text" name="summary"/></br>
+        <input type="submit" value="submit"/>
+      </form>
+    </main>
+  </body>
+</html>
