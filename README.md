@@ -9,7 +9,7 @@
 #### Any user can create a mock profile, providing a brand statement and a summary, also letting any user edit/delete the aforementioned profile.
 
 ## Technologies
-MEAN stack, Heroku, Git
+MEN stack, Heroku, Git
 
 ## Bugs
 Users can't delete other users *yet*.
