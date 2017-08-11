@@ -4,17 +4,17 @@
 
 >Would you like to sabotage other profiles to feel better about yourself?
 
->craftli lets users register to its cutting-edge technologies. Upon registry, the user is added to the list of established users.
+#### craftli lets users register to its cutting-edge technologies. Upon registry, the user is added to the list of established users.
 
-Any user can create a mock profile, providing a brand statement and a summary, also letting any user edit/delete the aforementioned profile.
+#### Any user can create a mock profile, providing a brand statement and a summary, also letting any user edit/delete the aforementioned profile.
 
-### Technologies
+## Technologies
 MEAN stack, Heroku, Git
 
-### Bugs
+## Bugs
 Users can't delete other users *yet*.
 
-### Improvements to be made:
+## Improvements to be made:
 1. Styling for multiple media devices.
 2. Proper padding/spacing around elements.
 3. Comments/Feedback on profiles.
@@ -23,4 +23,4 @@ Users can't delete other users *yet*.
 6. More content.
 7. Enlarge text areas for About and Summary.
 
-### [LIVE SITE](https://craftli.herokuapp.com)
+## [LIVE SITE](https://craftli.herokuapp.com)
