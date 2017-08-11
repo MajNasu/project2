@@ -8,9 +8,8 @@
 
     <h1>all profiles</h1>
 
-
+      <div class="jumbotron">
       <%for(let i=0; i<profiles.length; i++){%>
-        <div class="jumbotron">
         <h1 class="display-6"><a href="/profiles/<%=profiles[i]._id%>">
           <%=profiles[i].firstName%> <%=profiles[i].lastName%></a></h1>
             <br/>
